@@ -44,12 +44,19 @@ body{
   letter-spacing:1px;
 }
 .subscriber-counter{
-  margin:15px 0;color:#fff;font-size:22px;font-weight:bold;
+  margin:15px 0;
+  color:#fff;
+  font-size:22px;
+  font-weight:bold;
 }
 .button{margin:16px 0;}
 .btn{
-  display:block;padding:15px;border-radius:14px;
-  color:#fff;font-weight:bold;text-decoration:none;
+  display:block;
+  padding:15px;
+  border-radius:14px;
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
   background:linear-gradient(270deg,#00c6ff,#0072ff,#00ffcc);
   background-size:600% 600%;
   animation:gradientMove 4s ease infinite;
@@ -64,7 +71,6 @@ body{
 .points li{margin:8px 0;}
 .trust{color:#00ffcc;font-size:14px;}
 .urgent{color:#ffcc00;font-size:15px;margin-top:6px;}
-
 .ads-credit{margin-top:14px;}
 .ads-credit a{
   display:inline-block;
@@ -82,14 +88,17 @@ body{
 }
 </style>
 
-<!-- META PIXEL -->
+<!-- META PIXEL FINAL -->
 <script>
 !function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
+if(f.fbq)return;n=f.fbq=function(){
+n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];
+t=b.createElement(e);t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)
 }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
@@ -97,7 +106,12 @@ fbq('init','1727954128132041');
 fbq('track','PageView');
 </script>
 
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1727954128132041&ev=PageView&noscript=1"/>
+</noscript>
 </head>
+
 <body>
 
 <div class="hero">
@@ -114,7 +128,9 @@ fbq('track','PageView');
   <div class="urgent">⏳ Join Before Match Starts</div>
 
   <div class="button">
-    <a onclick="fbq('track','Lead')" href="https://t.me/+MqGWTIoYgqJhZjk1" class="btn">
+    <a href="https://t.me/+MqGWTIoYgqJhZjk1"
+       onclick="fbq('track','Lead');"
+       class="btn">
       Join Telegram Channel <i class="fa-brands fa-telegram"></i>
     </a>
   </div>
@@ -128,7 +144,9 @@ fbq('track','PageView');
   </div>
 
   <div class="button">
-    <a onclick="fbq('track','Lead')" href="https://t.me/+MqGWTIoYgqJhZjk1" class="btn">
+    <a href="https://t.me/+MqGWTIoYgqJhZjk1"
+       onclick="fbq('track','Lead');"
+       class="btn">
       SUBSCRIBE FOR FREE <i class="fa-brands fa-telegram"></i>
     </a>
   </div>
@@ -142,14 +160,17 @@ fbq('track','PageView');
 </div>
 
 <script>
-const target=60000,duration=2500,el=document.getElementById("subscriber-count");
-let start=null;
+const target = 60000;
+const duration = 2500;
+const el = document.getElementById("subscriber-count");
+let start = null;
+
 function animate(t){
- if(!start) start=t;
- let p=t-start;
- let c=Math.min(Math.floor((p/duration)*target),target);
- el.innerText=c.toLocaleString()+"+ Members";
- if(c<target) requestAnimationFrame(animate);
+  if(!start) start = t;
+  let progress = t - start;
+  let count = Math.min(Math.floor((progress/duration)*target), target);
+  el.innerText = count.toLocaleString() + "+ Members";
+  if(count < target) requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
 </script>
